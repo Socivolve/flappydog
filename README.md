@@ -16,6 +16,22 @@ Tests (Swift Testing for the game logic, XCTest for the Play → score → crash
 xcodebuild test -project FlappyDog.xcodeproj -scheme FlappyDog -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
 ```
 
+## TestFlight
+
+Needs a paid [Apple Developer Program](https://developer.apple.com/programs/) membership.
+
+1. Join the program and sign in to Xcode with that account (Xcode > Settings > Accounts).
+2. In [App Store Connect](https://appstoreconnect.apple.com) create an app with bundle ID `com.socivolve.flappydog`. Apple has rejected names with "Flappy" before, so pick a store name such as *Sky Pup*.
+3. Upload (your team ID is under developer.apple.com > Membership):
+
+   ```bash
+   TEAM_ID=ABCDE12345 scripts/testflight.sh
+   ```
+
+4. Once the build has processed, add yourself under TestFlight > Internal Testing and install it with the TestFlight app.
+
+Privacy details: no data collected (see `FlappyDog/PrivacyInfo.xcprivacy`); export compliance is answered in the Info.plist.
+
 ## Layout
 
 - `FlappyDog/Game/GameWorld.swift`: all rules (gravity, flap, pillars, collisions, score). No SpriteKit, fully unit-tested.
