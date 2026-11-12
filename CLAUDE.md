@@ -1,0 +1,1 @@
+- iOS-Projekt: Bauen und Testen nur auf dem Mac möglich, nicht auf diesem Linux-Server. Kein xcodebuild versuchen.
